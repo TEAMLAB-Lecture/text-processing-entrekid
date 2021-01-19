@@ -62,11 +62,11 @@ def no_vowels(input_string):
     """
 
     no_vowel_string = input_string
-    no_vowel_string = re.sub("[aeiouAEIOU]+", "", no_vowel_string).strip()
+    no_vowel_string = re.sub("[aeiouAEIOU]+", "", no_vowel_string)
 
     return no_vowel_string
 
 
 if __name__ == "__main__":
     # print(normalize("  good     thong"))
-    print(normalize("   EXTRA   SPACE   "))
+    print(no_vowels("AI For Vowelss"))
