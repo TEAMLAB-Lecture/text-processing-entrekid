@@ -35,8 +35,8 @@ def normalize(input_string):
              'extra space'
     """
     lower_string = input_string.lower().strip()
-    print(re.sub(" +", " ", lower_string))
-    # return normalized_string
+    normalized_string = re.sub(" +", " ", lower_string)
+    return normalized_string
 
 
 def no_vowels(input_string):
@@ -69,4 +69,4 @@ def no_vowels(input_string):
 
 if __name__ == "__main__":
     # print(normalize("  good     thong"))
-    print(normalize("   heloooEEEEEo   good      ooolo   "))
+    print(normalize("   EXTRA   SPACE   "))
