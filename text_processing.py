@@ -6,6 +6,7 @@
 NLP에서 흔히하는 전처리는 소문자 변환, 앞뒤 필요없는 띄어쓰기를 제거하는 등의 텍스트 정규화 (text normalization)입니다. 
 이번 숙제에서는 텍스트 처리 방법을 파이썬으로 배워보겠습니다. 
 """
+import re
 
 
 def normalize(input_string):
@@ -33,8 +34,9 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = input_string.lower().strip()
-    return normalized_string
+    lower_string = input_string.lower().strip()
+    print(re.sub(" +", " ", lower_string))
+    # return normalized_string
 
 
 def no_vowels(input_string):
@@ -58,11 +60,13 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = input_string.replace("a", "").replace(
-        "e", "").replace("i", "").replace("o", "").replace("u", "")
+
+    no_vowel_string = input_string
+    no_vowel_string = re.sub("[aeiouAEIOU]+", "", no_vowel_string).strip()
+
     return no_vowel_string
 
 
 if __name__ == "__main__":
-    print(normalize("  good  "))
-    print(no_vowels("hello"))
+    # print(normalize("  good     thong"))
+    print(normalize("   heloooEEEEEo   good      ooolo   "))
